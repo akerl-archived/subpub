@@ -267,7 +267,6 @@ class Check(Subpub):
 
         super().__init__(config)
 
-
         # Turn the interval into a fancy timedelta
         self.interval = datetime.timedelta(seconds=self.config['interval'])
 
@@ -316,7 +315,6 @@ class Check(Subpub):
                 compiled_message['tags'].add('new')
             new_messages.append(compiled_message)
         self.messages = new_messages
-                
 
     # fancy helper to check message_parts and message_defaults
     def build_message(self, **kwargs):
