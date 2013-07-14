@@ -11,13 +11,11 @@ class main(object):
     def __init__(self, config):
         self.config = config
 
-        logger.info('Creating requests session object')
         self.session = requests.Session()
         self.session.verify = self.config.setdefault('verify', True)
 
         if 'user' in self.config:
             if self.config['user'] == 'AUTO':
-                logger.info('Extracting user from system')
                 self.config['user'] = getpass.getuser()
             logger.interact('Please enter the password for {0} ({1})'.format(
                 self.config['user'],

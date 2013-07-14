@@ -1,30 +1,17 @@
-from common import logger, Source, library, load_object 
+from common import logger, Source, load_object 
 import lib.modlib.modlib as modlib
 import lib.conflib.conflib as conflib
 import glob
 
 
 class main(Source):
-    required_config = {'location'}
-    default_config = {
-        'parser': 'raw'
-    }
+    def pre_init(self):
+        self.required_config = {'location'}
+        self.default_config = {
+            'parser': 'raw'
+        }
 
     def init(self):
-        library.setdefault(
-            'schemas',
-            modlib.Modstack(
-                formula='packs.{pack}.schemas.{name}',
-                target='main',
-            )
-        )
-        library.setdefault(
-            'parsers',
-            modlib.Modstack(
-                formula='packs.{pack}.parsers.{name}',
-                target='main',
-            )
-        )
         if '://' not in self.config['location']:
             schema = 'file'
         else:

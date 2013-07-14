@@ -1,3 +1,6 @@
+from common import logger
+
+
 class main(object):
     def __init__(self, config):
         pass
