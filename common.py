@@ -82,8 +82,6 @@ def configure_logger(verbosity, logfile):
     )
     terminal_handler.setFormatter(terminal_formatter)
     logger.addHandler(terminal_handler)
-    logger.debug('Terminal logging configured')
-    logger.info('Verbosity set at {0}'.format(verbosity))
 
     if logfile is None:
         return
@@ -98,7 +96,6 @@ def configure_logger(verbosity, logfile):
     )
     file_handler.setFormatter(file_formatter)
     logger.addHandler(file_handler)
-    logger.debug('Logging to file: {0}'.format(logfile))
 
 
 def load_configuration(config_file):
@@ -107,7 +104,6 @@ def load_configuration(config_file):
         logger.critical(
             'Configuration file not found: {0}'.format(config_file)
         )
-    logger.info('Using configuration file: {0}'.format(config_file))
     with open(config_file) as handle:
         tmp_config = yaml.load(handle.read())
 
@@ -116,7 +112,6 @@ def load_configuration(config_file):
     if len(missing):
         logger.critical('Missing required attribute(s): {0}'.format(missing))
     config.update(tmp_config)
-    logger.info('Configuration successfully loaded')
 
 
 # Recursion is fun
@@ -149,11 +144,17 @@ def now(update=False):
 
 # Fancy modlib-based module loader
 def load_object(kind, raw_name):
+    library.setdefault(
+        kind,
+        modlib.Modstack(
+            formula='packs.{{pack}}.{0}.{{name}}'.format(kind),
+            target='main',
+        )
+    )
     # If no pack is given, default to 'base'
     if '.' not in raw_name:
         raw_name = 'base.' + raw_name
     (pack, name) = raw_name.split('.')
-    logger.info('Loading {0} from {1}'.format(raw_name, kind))
     return library[kind].get(pack=pack, name=name)
 
 
@@ -161,7 +162,6 @@ def get_source(name, config):
     for source in sources:
         if source._name == name and source.config == config:
             # if there's an existing identical source, return it
-            logger.debug('Found existing source for {0}'.format(name))
             return source
     # else, load the source in
     new_source = load_object('sources', name)(config)
@@ -302,8 +302,6 @@ class Check(Subpub):
                 'Bad degrade_calc provided: {0}'.format(degrade_calc)
             )
 
-        logger.debug('Message defaults: {0}'.format(self.message_defaults))
-
     def run(self):
         # Where the action happens during the main processing loop
         # Should return False for failure, list of messages for success
@@ -329,11 +327,9 @@ class Check(Subpub):
             logger.critical(
                 'Message missing required parts: {0}'.format(missing)
             )
-            logger.debug('Message: {0}'.format(message))
         # Apply a weight_calc, if it exists
         if self.weight_calc is not None:
             message['weight'] = self.weight_calc(message['weight'])
-        logger.debug('Adding message: {0}'.format(message))
         return message
 
     def degrade(self):
