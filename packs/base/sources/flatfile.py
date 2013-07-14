@@ -1,4 +1,4 @@
-from common import logger, Source, load_object 
+from common import logger, Source, load_object
 import lib.modlib.modlib as modlib
 import lib.conflib.conflib as conflib
 import glob

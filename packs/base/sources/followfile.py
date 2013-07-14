@@ -2,6 +2,7 @@ from common import logger, Source
 
 import os
 
+
 class main(Source):
     def pre_init(self):
         self.required_config = {'location'}
@@ -9,7 +10,9 @@ class main(Source):
     def init(self):
         self.location = os.path.expanduser(self.config['location'])
         if not os.path.isfile(self.location):
-            logger.critical('Followfile does not exist: {0}'.format(self.location))
+            logger.critical(
+                'Followfile does not exist: {0}'.format(self.location)
+            )
         self.handle = open(self.location)
         self.handle.seek(0, 2)
 
