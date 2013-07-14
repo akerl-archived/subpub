@@ -1,0 +1,4 @@
+packs/*
+!packs/base
+.env
+__pycache__
