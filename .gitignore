@@ -1,4 +1,6 @@
 packs/*
 !packs/base
+logs/*
+!logs/.keep
 .env
 __pycache__

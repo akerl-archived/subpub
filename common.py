@@ -38,6 +38,8 @@ def parse_args():
         help='file to log to',
         metavar='FILE',
         dest='logfile',
+        const='logs/debug.log',
+        nargs='?',
     )
     parser.add_argument(
         '-v', '--verbose',
