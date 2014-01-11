@@ -1,6 +1,0 @@
-[submodule "lib/modlib"]
-	path = lib/modlib
-	url = git://github.com/akerl/modlib.git
-[submodule "lib/conflib"]
-	path = lib/conflib
-	url = git://github.com/akerl/conflib.git
