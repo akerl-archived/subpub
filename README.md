@@ -1,11 +1,12 @@
 subpub
 =========
 
-[![Gem Version](https://badge.fury.io/rb/subpub.png)](http://badge.fury.io/rb/subpub)
-[![Dependency Status](https://gemnasium.com/akerl/subpub.png)](https://gemnasium.com/akerl/subpub)
-[![Code Climate](https://codeclimate.com/github/akerl/subpub.png)](https://codeclimate.com/github/akerl/subpub)
-[![Coverage Status](https://coveralls.io/repos/akerl/subpub/badge.png?branch=master)](https://coveralls.io/r/akerl/subpub?branch=master)
-[![Build Status](https://travis-ci.org/akerl/subpub.png?branch=master)](https://travis-ci.org/akerl/subpub)
+[![Gem Version](https://img.shields.io/gem/v/subpub.svg)](https://rubygems.org/gems/subpub)
+[![Dependency Status](https://img.shields.io/gemnasium/akerl/subpub.svg)](https://gemnasium.com/akerl/subpub)
+[![Code Climate](https://img.shields.io/codeclimate/github/akerl/subpub.svg)](https://codeclimate.com/github/akerl/subpub)
+[![Coverage Status](https://img.shields.io/coveralls/akerl/subpub.svg)](https://coveralls.io/r/akerl/subpub)
+[![Build Status](https://img.shields.io/travis/akerl/subpub.svg)](https://travis-ci.org/akerl/subpub)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
 An information aggregator, pulling data from arbitrary sources and using it in arbitrary ways
 
