@@ -8,7 +8,7 @@ subpub
 [![Build Status](https://img.shields.io/travis/akerl/subpub.svg)](https://travis-ci.org/akerl/subpub)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
-An information aggregator, pulling data from arbitrary sources and using it in arbitrary ways
+An information aggregator, pulling data from arbitrary sources and using it in arbitrary ways.
 
 ## Usage
 
