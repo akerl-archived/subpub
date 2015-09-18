@@ -1,3 +1,5 @@
+**Inactive Project:** It turns out that "generic input parser and output generator" is the most ambiguous and fluid project description. I've accomplished most of my needs here with more specific tooling.
+
 subpub
 =========
 
