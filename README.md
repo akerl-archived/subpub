@@ -4,7 +4,6 @@ subpub
 =========
 
 [![Gem Version](https://img.shields.io/gem/v/subpub.svg)](https://rubygems.org/gems/subpub)
-[![Dependency Status](https://img.shields.io/gemnasium/akerl/subpub.svg)](https://gemnasium.com/akerl/subpub)
 [![Code Climate](https://img.shields.io/codeclimate/github/akerl/subpub.svg)](https://codeclimate.com/github/akerl/subpub)
 [![Coverage Status](https://img.shields.io/coveralls/akerl/subpub.svg)](https://coveralls.io/r/akerl/subpub)
 [![Build Status](https://img.shields.io/travis/akerl/subpub.svg)](https://travis-ci.org/akerl/subpub)
